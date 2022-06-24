@@ -6,6 +6,16 @@ class MainPageLocators():
 
 
 class LoginPageLocators():
-    LOGIN_FORM = (By.ID, "login_form")
-    REGISTRATION_FORM = (By.ID, "register_form")
+    LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
+    REGISTRATION_FORM = (By.CSS_SELECTOR, "#register_form")
+
+
+class ProductPageLocators():
+    ADD_BASKET = (By.CLASS_NAME, "btn-add-to-basket")
+    NAME_PRODUCT = (By.TAG_NAME, "h1")
+    PRICE_PRODUCT = (By.CLASS_NAME, "price_color")
+    NAME_PRODUCT_IN_BASKET = (By.XPATH, '//*[@id="messages"]/div[1]/div/strong')
+    PRICE_PRODUCT_IN_BASKET = (By.XPATH, '//*[@id="messages"]/div[5]/div/p[1]/strong')
+
+
 
