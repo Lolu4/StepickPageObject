@@ -1,6 +1,8 @@
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from .base_page import BasePage
 from .locators import ProductPageLocators
-from selenium.common.exceptions import NoAlertPresentException
+from selenium.common.exceptions import NoAlertPresentException, TimeoutException
 import math
 
 
@@ -32,3 +34,9 @@ class ProductPage(BasePage):
         product_price = self.browser.find_element(*ProductPageLocators.PRICE_PRODUCT).text
         product_price_in_busket = self.browser.find_element(*ProductPageLocators.PRICE_PRODUCT_IN_BASKET).text
         assert product_price in product_price_in_busket, "The price of the item in the cart is not correct"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.MESSAGE_ADD), 'Message is present'
+
+    def should_disappear_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.MESSAGE_ADD), 'Message is not disapeared'
