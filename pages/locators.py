@@ -19,3 +19,7 @@ class ProductPageLocators():
     PRICE_PRODUCT_IN_BASKET = (By.CSS_SELECTOR, '.col-sm-6>.price_color')
     MESSAGE_ADD = (By.XPATH, '//*[@id="messages"]/div[1]')
 
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
